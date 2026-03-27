@@ -1,0 +1,100 @@
+body {
+    text-align: center;
+    background: black;
+    color: white;
+    font-family: Arial;
+}
+
+.robot-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+/* Robot structure */
+.robot {
+    position: relative;
+}
+
+/* Head */
+.head {
+    width: 60px;
+    height: 60px;
+    background: lime;
+    border-radius: 10px;
+    margin: auto;
+}
+
+/* Body */
+.body {
+    width: 70px;
+    height: 80px;
+    background: green;
+    margin: auto;
+    position: relative;
+}
+
+/* Arms */
+.arm {
+    width: 15px;
+    height: 60px;
+    background: lime;
+    position: absolute;
+    top: 10px;
+}
+
+.arm.left {
+    left: -20px;
+}
+
+.arm.right {
+    right: -20px;
+}
+
+/* Legs */
+.legs {
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
+    margin: auto;
+}
+
+.leg {
+    width: 15px;
+    height: 60px;
+    background: lime;
+}
+
+/* Animations */
+@keyframes bodyDance {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(10deg); }
+    100% { transform: rotate(-10deg); }
+}
+
+@keyframes armDance {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(40deg); }
+    100% { transform: rotate(-40deg); }
+}
+
+@keyframes legDance {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Dance class */
+.dance .body {
+    animation: bodyDance 0.5s infinite;
+}
+
+.dance .arm {
+    animation: armDance 0.5s infinite;
+    transform-origin: top;
+}
+
+.dance .leg {
+    animation: legDance 0.5s infinite;
+}
